@@ -1,5 +1,6 @@
 package fileConnector;
 
+import fileConnector.filesystem.FileWriter;
 import fileConnector.filesystem.MyFile;
 import fileConnector.filesystem.FileReader;
 
@@ -14,5 +15,7 @@ public class Controller {
     public void startProgram() throws IOException {
         FileReader fr = new FileReader();
         fr.readDirectory();
+        FileWriter fw = new FileWriter();
+        fw.print();
     }
 }

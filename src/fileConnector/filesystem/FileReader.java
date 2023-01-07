@@ -14,7 +14,6 @@ import java.util.stream.Stream;
 
 public class FileReader extends FileManager {
 
-    protected static String path;
     private final List<File> folder = new ArrayList<>();
 
     public void readDirectory() throws FileNotFoundException {
