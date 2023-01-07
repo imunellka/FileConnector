@@ -20,7 +20,7 @@ public class FileWriter extends FileManager {
     private  void printDirectory() throws IOException {
         out.write("Your text: \n".getBytes());
         while (sorted_system.size() != system.size()) {
-            MyFile next = nextFile(root);
+            MyFile next = NextFile(root);
             if (next != null) {
                 printFile(false, next);
             }
@@ -46,19 +46,9 @@ public class FileWriter extends FileManager {
             // добавляем в наш список
             sorted_system.add(file.name);
             if (!flag) {
-                printFile(false, nextFile(file.name));
+                printFile(false, NextFile(file.name));
             }
         }
-    }
-
-    private  MyFile nextFile(String startFile) {
-        for (MyFile file : system) {
-            List<String> fileChildren = file.children;
-            if (fileChildren.contains(startFile)) {
-                return file;
-            }
-        }
-        return null;
     }
 
     private  void findRoot() throws IOException {
