@@ -1,11 +1,11 @@
 package fileConnector;
-import java.io.IOException;
 
-import static fileConnector.Controller.startProgram;
+import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        startProgram();
+        Controller process = new Controller();
+        process.startProgram();
     }
 }
