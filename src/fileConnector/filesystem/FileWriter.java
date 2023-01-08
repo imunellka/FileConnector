@@ -8,15 +8,20 @@ import java.util.List;
 public class FileWriter extends FileManager {
     static FileOutputStream out;
 
-    @Override
     public void printDirectory() throws IOException {
         out = new FileOutputStream(path + "/result.txt");
+        out.write("Your text: \n".getBytes());
         print();
         out.close();
     }
 
     private void print() throws IOException {
-        out.write("Your text: \n".getBytes());
-
+        for(var file : sorted_system){
+            for (String line : file.text) {
+                out.write(line.getBytes());
+                out.write('\n');
+                System.out.println(line);
+            }
+        }
     }
 }

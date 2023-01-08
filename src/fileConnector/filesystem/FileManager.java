@@ -10,8 +10,8 @@ public class FileManager extends Controller {
     protected static final List<MyFile> system = new ArrayList<>();
     protected static final List<MyFile> sorted_system = new ArrayList<>();
     protected static String path;
+
     public void readDirectory() throws FileNotFoundException {}
-    public void printDirectory() throws IOException {}
     public void Sorting() throws UnsupportedOperationException {
         boolean hasNoChild = true;
         while (!system.isEmpty()) {
