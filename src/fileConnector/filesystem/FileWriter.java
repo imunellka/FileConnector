@@ -7,7 +7,7 @@ public class FileWriter extends FileManager {
     private FileOutputStream out;
 
     /**
-     * ЗАпускает печать списка файлов
+     * Запускает печать списка файлов
      *
      * @throws IOException ошибка записи в файл
      */

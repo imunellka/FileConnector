@@ -1,2 +1,2 @@
 hello, i'm second file.
-require 'third.txt'
+require 'third'

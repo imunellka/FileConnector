@@ -16,6 +16,7 @@ public class FileReader extends FileManager {
 
     /**
      * Обрабатываем папку со всеми подпапками
+     *
      * @throws FileNotFoundException директория не найдена
      */
     @Override
@@ -38,8 +39,9 @@ public class FileReader extends FileManager {
 
     /**
      * добавляем файл в систему со всеми requires
+     *
      * @param file файл
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException файл не найден
      */
     private void readFile(File file) throws FileNotFoundException {
         // считываем текст

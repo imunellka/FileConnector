@@ -67,7 +67,6 @@ public class FileManager {
      */
     protected void adoption(String parentPath, String childPath) {
         int length = parentPath.length();
-        // находим путь -4 в конце обрезает расширение
         parentPath = parentPath.substring(path.length() + 1, length - 4);
         for (MyFile my_file : system) {
             if (Objects.equals(my_file.getName(), parentPath)) {
