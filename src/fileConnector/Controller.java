@@ -12,7 +12,7 @@ public class Controller {
         FileManager fr = new FileReader();
         fr.readDirectory();
         try {
-            fr.Sorting();
+            fr.sorting();
         }catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
         }

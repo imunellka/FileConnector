@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileWriter extends FileManager {
-    static FileOutputStream out;
+    private FileOutputStream out;
 
     public void printDirectory() throws IOException {
         out = new FileOutputStream(path + "/result.txt");
