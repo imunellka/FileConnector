@@ -35,6 +35,7 @@ public class FileReader extends FileManager {
         for (File file : folder) {
             readFile(file);
         }
+        system.sort((x, y) -> x.getName().compareTo(y.getName()));
     }
 
     /**
