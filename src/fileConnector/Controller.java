@@ -13,10 +13,10 @@ public class Controller {
         fr.readDirectory();
         try {
             fr.sorting();
+            FileWriter fw = new FileWriter();
+            fw.printDirectory();
         }catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
         }
-        FileWriter fw = new FileWriter();
-        fw.printDirectory();
     }
 }
