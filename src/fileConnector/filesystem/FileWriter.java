@@ -2,8 +2,6 @@ package fileConnector.filesystem;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FileWriter extends FileManager {
     static FileOutputStream out;
@@ -16,7 +14,7 @@ public class FileWriter extends FileManager {
     }
 
     private void print() throws IOException {
-        for(var file : sorted_system){
+        for (var file : sorted_system) {
             for (String line : file.text) {
                 out.write(line.getBytes());
                 out.write('\n');

@@ -8,7 +8,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -17,7 +16,6 @@ public class FileReader extends FileManager {
 
     @Override
     public void readDirectory() throws FileNotFoundException {
-
         Scanner in = new Scanner(System.in);
         System.out.print("Enter absolute path to your file: ");
         path = in.nextLine();
