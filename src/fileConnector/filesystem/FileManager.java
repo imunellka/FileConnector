@@ -29,7 +29,7 @@ public class FileManager extends Controller {
             if (hasNoChild) {
                 system.remove(v);
                 for (MyFile file : system) {
-                    while (file.children.remove(v)) { }
+                    while (file.children.remove(v.name)) { }
                 }
             }
             else {
