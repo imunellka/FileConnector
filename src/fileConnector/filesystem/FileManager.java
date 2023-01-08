@@ -1,7 +1,8 @@
 package fileConnector.filesystem;
 
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileManager {
     protected static final List<MyFile> system = new ArrayList<>();
@@ -22,21 +23,21 @@ public class FileManager {
     public void sorting() throws UnsupportedOperationException {
         boolean hasNoChild = true;
         while (!system.isEmpty()) {
-            MyFile v = null;
+            MyFile vertex = null;
             for (MyFile file : system) {
                 if (file.children.isEmpty()) {
                     sorted_system.add(file);
                     hasNoChild = true;
-                    v = file;
+                    vertex = file;
                     break;
                 }
                 hasNoChild = false;
             }
             if (hasNoChild) {
-                system.remove(v);
+                system.remove(vertex);
                 for (MyFile file : system) {
-                    while (file.children.contains(v.getName())) {
-                        file.children.remove(v.getName());
+                    while (file.children.contains(vertex.getName())) {
+                        file.children.remove(vertex.getName());
                     }
                 }
             } else {
@@ -67,9 +68,10 @@ public class FileManager {
      */
     protected void adoption(String parentPath, String childPath) {
         int length = parentPath.length();
+        //обрезаем расширение (.txt)
         parentPath = parentPath.substring(path.length() + 1, length - 4);
         for (MyFile my_file : system) {
-            if (Objects.equals(my_file.getName(), parentPath)) {
+            if (parentPath.equals(my_file.getName())) {
                 my_file.adopt(childPath);
             }
         }
