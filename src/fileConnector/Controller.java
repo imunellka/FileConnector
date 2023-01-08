@@ -21,6 +21,8 @@ public class Controller {
             fw.printDirectory();
         }catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
+        }catch (IOException e) {
+            System.out.println("Произошли ошибки во время чтения файлов");
         }
     }
 }

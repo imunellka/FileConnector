@@ -8,10 +8,14 @@ public class FileWriter extends FileManager {
 
     /**
      * ЗАпускает печать списка файлов
+     *
      * @throws IOException ошибка записи в файл
      */
     public void printDirectory() throws IOException {
         out = new FileOutputStream(path + "/result.txt");
+        System.out.print("Your list: \n");
+        printList();
+        System.out.print("Your text: \n");
         out.write("Your text: \n".getBytes());
         print();
         out.close();
@@ -19,6 +23,7 @@ public class FileWriter extends FileManager {
 
     /**
      * печатает файл
+     *
      * @throws IOException ошибка записи в файл
      */
     private void print() throws IOException {
@@ -28,6 +33,18 @@ public class FileWriter extends FileManager {
                 out.write('\n');
                 System.out.println(line);
             }
+        }
+    }
+
+    /**
+     * печатает список файлов
+     */
+    private void printList() {
+        int i = 1;
+        for (var file : sorted_system) {
+            System.out.print(i++);
+            System.out.print(". ");
+            System.out.println(file.getName());
         }
     }
 }

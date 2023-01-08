@@ -20,7 +20,7 @@ public class MyFile {
     }
 
     /**
-     * ДОбавление ребенка require
+     * Добавление ребенка require
      * @param child имя файла-ребенка
      */
     protected void adopt(String child) {
