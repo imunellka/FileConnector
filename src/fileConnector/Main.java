@@ -6,6 +6,7 @@ public class Main {
 
     /**
      * Запускает программу
+     *
      * @param args стандартно
      * @throws IOException чтение файла
      */

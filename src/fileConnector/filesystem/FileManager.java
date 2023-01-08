@@ -11,6 +11,7 @@ public class FileManager {
 
     /**
      * Пустой метод для переопределения в FIleReader
+     *
      * @throws FileNotFoundException не найдена папка
      */
     public void readDirectory() throws FileNotFoundException {
@@ -18,6 +19,7 @@ public class FileManager {
 
     /**
      * Сортировка списка файлов по зависимостям.
+     *
      * @throws UnsupportedOperationException в случае выявления зависимостей
      */
     public void sorting() throws UnsupportedOperationException {
@@ -53,8 +55,9 @@ public class FileManager {
 
     /**
      * Добавляет прочтенный файл в систему
+     *
      * @param parentPath путь к файлу
-     * @param text текст файла
+     * @param text       текст файла
      */
     protected void addToSystem(String parentPath, List<String> text) {
         parentPath = parentPath.substring(path.length() + 1, parentPath.length() - 4);
@@ -63,8 +66,9 @@ public class FileManager {
 
     /**
      * Добавляет к родителю ребенка (require зависимости)
+     *
      * @param parentPath файл родитель
-     * @param childPath файл дите
+     * @param childPath  файл дите
      */
     protected void adoption(String parentPath, String childPath) {
         int length = parentPath.length();

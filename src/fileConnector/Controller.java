@@ -10,6 +10,7 @@ public class Controller {
 
     /**
      * Общая логика программы
+     *
      * @throws IOException на чтение файлов
      */
     public void startProgram() throws IOException {
@@ -19,9 +20,9 @@ public class Controller {
             fr.sorting();
             FileWriter fw = new FileWriter();
             fw.printDirectory();
-        }catch (UnsupportedOperationException e) {
+        } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Mistakes happened during the files reading");
         }
     }

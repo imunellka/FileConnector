@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyFile {
-    private final String name;
     protected final List<String> children = new ArrayList<>();
+    private final String name;
     protected List<String> text;
 
     public MyFile(String name, List<String> text) {
