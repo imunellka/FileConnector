@@ -2,19 +2,45 @@ package fileConnector.filesystem;
 
 import fileConnector.Controller;
 
-import java.util.List;
-import java.util.Objects;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
 
 public class FileManager extends Controller {
+    protected static final List<MyFile> system = new ArrayList<>();
+    protected static final List<MyFile> sorted_system = new ArrayList<>();
     protected static String path;
-    public MyFile NextFile(String startFile){
-        for (MyFile file : system) {
-            List<String> fileChildren = file.children;
-            if (fileChildren.contains(startFile)) {
-                return file;
+    public void readDirectory() throws FileNotFoundException {}
+    public void printDirectory() throws IOException {}
+    public void Sorting() throws UnsupportedOperationException {
+        boolean hasNoChild = true;
+        while (!system.isEmpty()) {
+            MyFile v = null;
+            for (MyFile file : system) {
+                if (file.children.isEmpty()) {
+                    sorted_system.add(file);
+                    hasNoChild = true;
+                    v = file;
+                    break;
+                }
+                hasNoChild = false;
+            }
+
+            if (hasNoChild) {
+                system.remove(v);
+                for (MyFile file : system) {
+                    while (file.children.remove(v)) { }
+                }
+            }
+            else {
+                StringBuilder eMessage = new StringBuilder();
+                for (MyFile file : system) {
+                    eMessage.append(file.name);
+                    eMessage.append("; ");
+                }
+                throw new UnsupportedOperationException("Cycle was found in these files: " + eMessage);
             }
         }
-        return null;
     }
     public void addToSystem(String parentPath, List<String> text) {
         parentPath = parentPath.substring(path.length() + 1, parentPath.length() - 4);
@@ -29,9 +55,5 @@ public class FileManager extends Controller {
                 my_file.adopt(childPath);
             }
         }
-    }
-
-    public static boolean check(String start) {
-        return false;
     }
 }

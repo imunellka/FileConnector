@@ -13,9 +13,9 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class FileReader extends FileManager {
-
     private final List<File> folder = new ArrayList<>();
 
+    @Override
     public void readDirectory() throws FileNotFoundException {
 
         Scanner in = new Scanner(System.in);

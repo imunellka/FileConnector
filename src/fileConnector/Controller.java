@@ -1,21 +1,19 @@
 package fileConnector;
 
-import fileConnector.filesystem.FileWriter;
-import fileConnector.filesystem.MyFile;
-import fileConnector.filesystem.FileReader;
+import fileConnector.filesystem.FileManager;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Controller {
 
-    public static final List<MyFile> system = new ArrayList<>();
-
     public void startProgram() throws IOException {
-        FileReader fr = new FileReader();
+        FileManager fr = new FileManager();
         fr.readDirectory();
-        FileWriter fw = new FileWriter();
-        fw.print();
+        try {
+            fr.Sorting();
+        }catch (UnsupportedOperationException e) {
+            System.out.println(e.getMessage());
+        }
+        fr.printDirectory();
     }
 }
