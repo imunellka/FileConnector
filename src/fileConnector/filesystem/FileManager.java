@@ -8,9 +8,17 @@ public class FileManager {
     protected static final List<MyFile> sorted_system = new ArrayList<>();
     protected static String path;
 
+    /**
+     * Пустой метод для переопределения в FIleReader
+     * @throws FileNotFoundException не найдена папка
+     */
     public void readDirectory() throws FileNotFoundException {
     }
 
+    /**
+     * Сортировка списка файлов по зависимостям.
+     * @throws UnsupportedOperationException в случае выявления зависимостей
+     */
     public void sorting() throws UnsupportedOperationException {
         boolean hasNoChild = true;
         while (!system.isEmpty()) {
@@ -42,11 +50,21 @@ public class FileManager {
         }
     }
 
+    /**
+     * Добавляет прочтенный файл в систему
+     * @param parentPath путь к файлу
+     * @param text текст файла
+     */
     protected void addToSystem(String parentPath, List<String> text) {
         parentPath = parentPath.substring(path.length() + 1, parentPath.length() - 4);
         system.add(new MyFile(parentPath, text));
     }
 
+    /**
+     * Добавляет к родителю ребенка (require зависимости)
+     * @param parentPath файл родитель
+     * @param childPath файл дите
+     */
     protected void adoption(String parentPath, String childPath) {
         int length = parentPath.length();
         // находим путь -4 в конце обрезает расширение

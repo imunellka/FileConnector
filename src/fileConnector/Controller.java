@@ -8,6 +8,10 @@ import java.io.IOException;
 
 public class Controller {
 
+    /**
+     * Общая логика программы
+     * @throws IOException на чтение файлов
+     */
     public void startProgram() throws IOException {
         FileManager fr = new FileReader();
         fr.readDirectory();

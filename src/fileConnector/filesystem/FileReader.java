@@ -14,6 +14,10 @@ import java.util.stream.Stream;
 public class FileReader extends FileManager {
     private final List<File> folder = new ArrayList<>();
 
+    /**
+     * Обрабатываем папку со всеми подпапками
+     * @throws FileNotFoundException директория не найдена
+     */
     @Override
     public void readDirectory() throws FileNotFoundException {
         Scanner in = new Scanner(System.in);
@@ -32,6 +36,11 @@ public class FileReader extends FileManager {
         }
     }
 
+    /**
+     * добавляем файл в систему со всеми requires
+     * @param file файл
+     * @throws FileNotFoundException
+     */
     private void readFile(File file) throws FileNotFoundException {
         // считываем текст
         List<String> text = new ArrayList<>();
